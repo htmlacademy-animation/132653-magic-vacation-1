@@ -85,7 +85,6 @@
 .social-block__list {
   @include list-reset;
   position: absolute;
-  // top: 100%;
   top: calc(100% - 1rem);
   transition: opacity 0.4s;
   right: 0;
