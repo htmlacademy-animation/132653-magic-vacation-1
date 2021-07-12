@@ -35,6 +35,7 @@
     background-color: $c-light;
     border: 2px solid $c-light;
     z-index: -1;
+    transition: 0.8s;
   }
 
   svg {
@@ -84,7 +85,9 @@
 .social-block__list {
   @include list-reset;
   position: absolute;
-  top: 100%;
+  // top: 100%;
+  top: calc(100% - 1rem);
+  transition: opacity 0.4s;
   right: 0;
   margin-top: 1.5rem;
   opacity: 0;
@@ -140,6 +143,7 @@
   .social-block--active & {
     opacity: 1;
     pointer-events: auto;
+    top: 100%;
   }
 
   li {
@@ -168,6 +172,17 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  top: 1rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+
+  .social-block--active & {
+    top: 0;
+    opacity: 1;
+    transition-property: color, top, opacity;
+    transition-timing-function: ease, ease, ease-in;
+    transition-duration: 0.4s;
+  }
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -219,6 +234,9 @@
   }
 
   &--insta {
+    .social-block--active & {
+      transition-delay: 0s, 0.2s, 0.2s;
+    }
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +249,9 @@
   }
 
   &--vk {
+    .social-block--active & {
+      transition-delay: 0s, 0.4s, 0.4s;
+    }
     svg {
       width: 1.7rem;
       height: 1rem;
