@@ -10495,13 +10495,13 @@ class FullPageScroll {
     if (isCustomScreenNext) {
       setTimeout(() => {
         this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
-      }, this.SCREEN_CHANGE_TIMEOUT);
+      }, this.CUSTOM_SCREEN_CHANGE_TIMEOUT);
     } else {
       this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
     }
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
-    }, this.CUSTOM_SCREEN_CHANGE_TIMEOUT);
+    }, this.SCREEN_ACTIVATE_TIMEOUT);
   }
 
   changeActiveMenuItem() {
